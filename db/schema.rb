@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_05_082001) do
+ActiveRecord::Schema.define(version: 2021_02_05_090308) do
 
   create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 2021_02_05_082001) do
     t.string "event_title"
     t.text "event_content"
     t.datetime "start_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "customer_id"
+  end
+
+  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "customer_id"
+    t.string "task_title"
+    t.boolean "task_valid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
