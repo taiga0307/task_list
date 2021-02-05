@@ -10,4 +10,6 @@ Rails.application.routes.draw do
     registrations: 'customers/registrations' # 会員登録画面、会員パスワード編集画面
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :events
 end
