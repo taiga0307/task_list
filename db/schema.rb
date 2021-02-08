@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_02_05_085516) do
 
-  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "customers", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "email"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2021_02_05_085516) do
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
-  create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "customer_id"
     t.string "event_title"
     t.text "event_content"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2021_02_05_085516) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.integer "customer_id"
     t.string "task_title"
     t.boolean "task_valid", default: false, null: false
